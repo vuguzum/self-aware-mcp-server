@@ -2,9 +2,6 @@
 
 MCP сервер на Node.js, предоставляющий инструменты получения базовой информации для LLM - текущее время, место, ОС, математические вычисления.
 
-**Author:** Alexander Kazantsev (vibe on z.ai)  
-**Email:** akazant@gmail.com
-
 ## Установка
 
 ```bash
@@ -230,6 +227,5 @@ MIT License
 
 ## Author
 
-**Alexander Kazantsev with z.ai**  
-Email: akazant@gmail.com
+Alexander Kazantsev (vibe on z.ai)   
 
