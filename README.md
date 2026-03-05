@@ -10,7 +10,7 @@ MCP (Model Context Protocol) сервер, предоставляющий инс
 |------|-------|--------|
 | **TypeScript/Node.js** | `self-aware/` | ✅ Готово + проверено|
 | **Python** | `self-aware-python/` | ✅ Готово + протестировано |
-| **C#** | `self-aware-csharp/` | ✅ Готово |
+| **C#** | `self-aware-csharp/` | ✅ Готово + скомпилировано|
 
 ---
 
