@@ -2,9 +2,6 @@
 
 MCP (Model Context Protocol) сервер на Node.js, предоставляющий инструменты самосознания для LLM.
 
-**Author:** Alexander Kazantsev with z.ai  
-**Email:** akazant@gmail.com
-
 ## Установка
 
 ```bash
