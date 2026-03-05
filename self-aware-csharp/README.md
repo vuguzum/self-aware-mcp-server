@@ -2,9 +2,6 @@
 
 MCP (Model Context Protocol) сервер на C#, предоставляющий инструменты самосознания для LLM.
 
-**Author:** Alexander Kazantsev with z.ai  
-**Email:** akazant@gmail.com
-
 ## Требования
 
 - .NET 8.0 SDK или выше
