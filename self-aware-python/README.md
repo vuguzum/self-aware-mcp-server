@@ -2,9 +2,6 @@
 
 MCP (Model Context Protocol) сервер на Python, предоставляющий инструменты самосознания для LLM.
 
-**Author:** Alexander Kazantsev with z.ai  
-**Email:** akazant@gmail.com
-
 ## Требования
 
 - Python 3.10 или выше
