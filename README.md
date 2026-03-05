@@ -121,7 +121,35 @@ dotnet build -c Release
 dotnet bin/Release/net8.0/self-aware-mcp.dll "Moscow, Russia"
 ```
 
----
+### Структура проекта
+```
+mcp-servers/
+├── README.md                    # Общий README
+│
+├── self-aware/                  # TypeScript/Node.js версия
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── src/
+│   │   └── index.ts
+│   ├── dist/
+│   │   └── index.js
+│   └── README.md
+│
+├── self-aware-python/           # Python версия
+│   ├── pyproject.toml
+│   ├── requirements.txt
+│   ├── src/
+│   │   └── self_aware/
+│   │       ├── __init__.py
+│   │       └── server.py
+│   ├── test_server.py
+│   └── README.md
+│
+└── self-aware-csharp/           # C# версия
+    ├── self-aware-mcp.csproj
+    ├── Program.cs
+    └── README.md
+```
 
 ## License
 
