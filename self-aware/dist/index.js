@@ -403,6 +403,8 @@ function safeEvaluate(expression) {
         }
         // Create safe scope with allowed functions and constants
         const scope = {
+            // Math object for internal use (pow, etc.)
+            Math: { pow: Math.pow },
             // Math constants
             pi: Math.PI,
             e: Math.E,
@@ -452,10 +454,16 @@ function safeEvaluate(expression) {
             sum: sum,
             len: len,
         };
-        // Preprocess expression: convert ** to ^ for power, handle arrays
+        // Preprocess expression: convert ** to Math.pow() for proper exponentiation
+        // Handle arrays first
         let processedExpr = expression
-            .replace(/\*\*/g, "^")
             .replace(/\[(\s*[\d.]+\s*(,\s*[\d.]+\s*)*)\]/g, "[$1]");
+        // Convert a ** b to Math.pow(a, b) using a more robust approach
+        // This handles nested powers correctly: a ** b ** c = a ** (b ** c)
+        processedExpr = processedExpr.replace(/([^*\s]|^)\*\*([^*]|$)/g, "$1__POW__$2");
+        while (processedExpr.includes("__POW__")) {
+            processedExpr = processedExpr.replace(/(\S+?)__POW__(\S+)/g, "Math.pow($1, $2)");
+        }
         // Use Function constructor with restricted scope (safer than eval)
         const funcBody = `
       "use strict";
