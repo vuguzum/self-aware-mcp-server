@@ -1,16 +1,16 @@
 # Self-Aware MCP Server
 
-MCP (Model Context Protocol) сервер, предоставляющий инструменты самосознания для LLM.
+MCP (Model Context Protocol) сервер, предоставляющий инструменты получения базовой информации (самосознания) для LLM - **текущее время, место, ОС, математические вычисления**.
+Версия для Node.js - рабочая: установлена и протестирована. Версии на Python и C# сделаны для сравнения - проверены на ошибки компиляции и протестированы агентом GLM-5.
 
----
 
 ## Доступные версии
 
 | Язык | Папка | Статус |
 |------|-------|--------|
-| **TypeScript/Node.js** | `self-aware/` | ✅ Готово + проверено|
-| **Python** | `self-aware-python/` | ✅ Готово + протестировано |
-| **C#** | `self-aware-csharp/` | ✅ Готово |
+| **TypeScript/Node.js** | `self-aware/` | ✅ проверено установкой |
+| **Python** | `self-aware-python/` | ✅ протестировано агентом |
+| **C#** | `self-aware-csharp/` | ✅ скомпилировано |
 
 ---
 
@@ -121,7 +121,35 @@ dotnet build -c Release
 dotnet bin/Release/net8.0/self-aware-mcp.dll "Moscow, Russia"
 ```
 
----
+### Структура проекта
+```
+mcp-servers/
+├── README.md                    # Общий README
+│
+├── self-aware/                  # TypeScript/Node.js версия
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── src/
+│   │   └── index.ts
+│   ├── dist/
+│   │   └── index.js
+│   └── README.md
+│
+├── self-aware-python/           # Python версия
+│   ├── pyproject.toml
+│   ├── requirements.txt
+│   ├── src/
+│   │   └── self_aware/
+│   │       ├── __init__.py
+│   │       └── server.py
+│   ├── test_server.py
+│   └── README.md
+│
+└── self-aware-csharp/           # C# версия
+    ├── self-aware-mcp.csproj
+    ├── Program.cs
+    └── README.md
+```
 
 ## License
 

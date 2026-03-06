@@ -1,9 +1,6 @@
 # Self-Aware MCP Server (Python)
 
-MCP (Model Context Protocol) сервер на Python, предоставляющий инструменты самосознания для LLM.
-
-**Author:** Alexander Kazantsev with z.ai  
-**Email:** akazant@gmail.com
+MCP сервер, предоставляющий инструменты получения базовой информации (самосознания) для LLM - текущее время, место, ОС, математические вычисления.
 
 ## Требования
 
