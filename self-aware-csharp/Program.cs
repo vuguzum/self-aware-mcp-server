@@ -836,19 +836,25 @@ class EvaluationContext
         }
         
         pos++; // Skip closing paren
-        
+
         // Call function
         if (_functions1.ContainsKey(funcName) && args.Count == 1)
         {
             return new ParseResult(_functions1[funcName](ToDouble(args[0])), pos);
         }
-        
+
         if (_functionsN.ContainsKey(funcName))
         {
+            // If single argument is already an array, use it directly
+            if (args.Count == 1 && args[0] is double[] directArr)
+            {
+                return new ParseResult(_functionsN[funcName](directArr), pos);
+            }
+            // Otherwise convert each argument to double
             var arr = args.Select(ToDouble).ToArray();
             return new ParseResult(_functionsN[funcName](arr), pos);
         }
-        
+
         throw new Exception($"Unknown function: {funcName}");
     }
 
@@ -859,6 +865,12 @@ class EvaluationContext
         if (value is long l) return l;
         if (value is float f) return f;
         if (value is double[] arr) return arr[0];
+        if (value is JsonElement elem)
+        {
+            if (elem.ValueKind == JsonValueKind.Number) return elem.GetDouble();
+            if (elem.ValueKind == JsonValueKind.Array)
+                return elem.EnumerateArray().Select(e => e.GetDouble()).ToArray()[0];
+        }
         throw new Exception($"Cannot convert {value?.GetType().Name} to double");
     }
 
