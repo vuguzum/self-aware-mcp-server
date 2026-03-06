@@ -227,5 +227,4 @@ MIT License
 
 ## Author
 
-**Alexander Kazantsev**  
-Email: akazant@gmail.com
+Alexander Kazantsev
