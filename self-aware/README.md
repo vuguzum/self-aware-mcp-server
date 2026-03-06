@@ -227,5 +227,5 @@ MIT License
 
 ## Author
 
-**Alexander Kazantsev with z.ai**  
+**Alexander Kazantsev**  
 Email: akazant@gmail.com
