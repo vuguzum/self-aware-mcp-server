@@ -1,0 +1,40 @@
+# Source files (not needed in published package)
+*.ts
+!*.d.ts
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+!dist/*.js
+!dist/*.d.ts
+
+# Development files
+.git/
+.gitignore
+bun.lock
+*.md
+!README.md
+
+# Test files
+**/*.test.ts
+**/test.ts
+test/
+tests/
+
+# Config files (not needed for runtime)
+tsconfig.json
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

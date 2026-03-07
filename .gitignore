@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+# dist/ - скомпилированные файлы (нужны для npm)
+# dist/
+*.tgz
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+
+# C#
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+*.nupkg
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+test_area.py
+test-runner/
+test_calc.py
+test_calc.cs
+
+# MCP output
+output-language.md

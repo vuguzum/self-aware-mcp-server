@@ -8,3 +8,4 @@
  * @license MIT
  */
 export {};
+//# sourceMappingURL=index.d.ts.map

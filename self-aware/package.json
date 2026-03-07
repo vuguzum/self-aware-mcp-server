@@ -1,26 +1,54 @@
 {
-  "name": "self-aware-mcp-server",
-  "version": "1.0.0",
-  "description": "MCP server providing self-awareness tools: location, datetime, and calculator",
-  "author": "Alexander Kazantsev with z.ai <akazant@gmail.com>",
+  "name": "@vugu/self-aware-mcp-server",
+  "version": "1.0.1",
+  "description": "MCP server providing self-awareness tools: location, datetime, system info, and safe calculator",
+  "author": "Alexander Kazantsev <akazant@gmail.com>",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "self-aware-mcp": "./dist/index.js"
+  },
   "type": "module",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "bun --hot src/index.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build",
+    "preversion": "npm run build",
+    "version": "git add -A && git commit -m \"chore: version %s\"",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0"
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.0.0",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/vuguzum/self-aware-mcp-server"
   },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "ai",
+    "llm",
+    "calculator",
+    "system-info",
+    "datetime",
+    "location",
+    "self-aware"
+  ],
   "license": "MIT",
-  "devDependencies": {
-    "@types/bun": "^1.0.0",
-    "@types/node": "^20.11.0",
-    "typescript": "^5.3.0"
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
