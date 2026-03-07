@@ -2,13 +2,44 @@
 
 MCP (Model Context Protocol) сервер, предоставляющий инструменты получения базовой информации (самосознания) для LLM - **текущее время, место, ОС, математические вычисления**.
 
+## TLDR (Быстрый старт)
+
+### Установка
+
+```bash
+npm install -g @vugu/self-aware-mcp-server
+```
+
+### Настройка (Claude Code и т.п.)
+
+в файле конфигурации mcp-серверов:
+
+```json
+{
+  "mcpServers": {
+    "self-aware": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@vugu/self-aware-mcp-server",
+        "Moscow, Russia"
+      ]
+    }
+  }
+}
+```
+
+**Замените `Moscow, Russia` на ваше местоположение.**
+
+---
+
 ## Доступные версии
 
-| Язык | Папка | Статус |
-|------|-------|--------|
-| **TypeScript/Node.js** | `self-aware/` | ✅ проверено установкой |
-| **Python** | `self-aware-python/` | ✅ протестировано |
-| **C#** | `self-aware-csharp/` | ✅ протестировано |
+| Язык | Папка |
+|------|-------|
+| **TypeScript/Node.js** | `self-aware/` |
+| **Python** | `self-aware-python/` |
+| **C#** | `self-aware-csharp/` |
 
 ---
 

@@ -2,7 +2,44 @@
 
 MCP сервер, предоставляющий инструменты получения базовой информации (самосознания) для LLM - текущее время, место, ОС, математические вычисления.
 
-## Установка
+## Установка через npm
+
+```bash
+npm install -g @vugu/self-aware-mcp-server
+```
+
+в файле конфигурации mcp-серверов:
+
+```json
+{
+  "mcpServers": {
+    "self-aware": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@vugu/self-aware-mcp-server",
+        "Moscow, Russia"
+      ]
+    }
+  }
+}
+```
+
+**Замените `Moscow, Russia` на ваше местоположение.**
+
+После установки пакет доступен как CLI-команда:
+
+```bash
+self-aware-mcp "Moscow, Russia"
+```
+
+Или через npx без установки:
+
+```bash
+npx -y @vugu/self-aware-mcp-server "Moscow, Russia"
+```
+
+## Локальная установка из исходников
 
 ```bash
 cd mcp-servers/self-aware
@@ -214,11 +251,31 @@ npx @modelcontextprotocol/inspector node /путь/к/dist/index.js "Test Locati
 self-aware/
 ├── package.json     # Зависимости проекта
 ├── tsconfig.json    # Конфигурация TypeScript
+├── .npmignore       # Файлы, исключаемые из npm-пакета
 ├── src/
 │   ├── index.ts     # Основной код MCP сервера
 │   └── test.ts      # Тесты для калькулятора
 ├── dist/            # Скомпилированный JavaScript
 └── README.md        # Документация
+```
+
+## Публикация в npm
+
+```bash
+# Войти в npm
+npm login
+
+# Опубликовать пакет (scoped пакеты требуют --access public)
+npm publish --access public
+
+# Опубликовать с тегом (например, beta)
+npm publish --tag beta
+```
+
+После публикации пользователи смогут установить пакет:
+
+```bash
+npm install -g @vugu/self-aware-mcp-server
 ```
 
 ## License
