@@ -1,6 +1,6 @@
 {
   "name": "@vugu/self-aware-mcp-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MCP server providing self-awareness tools: location, datetime, system info, and safe calculator",
   "author": "Alexander Kazantsev <akazant@gmail.com>",
   "main": "dist/index.js",
