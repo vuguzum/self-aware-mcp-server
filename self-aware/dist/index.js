@@ -454,16 +454,9 @@ function safeEvaluate(expression) {
             sum: sum,
             len: len,
         };
-        // Preprocess expression: convert ** to Math.pow() for proper exponentiation
-        // Handle arrays first
-        let processedExpr = expression
-            .replace(/\[(\s*[\d.]+\s*(,\s*[\d.]+\s*)*)\]/g, "[$1]");
-        // Convert a ** b to Math.pow(a, b) using a more robust approach
-        // This handles nested powers correctly: a ** b ** c = a ** (b ** c)
-        processedExpr = processedExpr.replace(/([^*\s]|^)\*\*([^*]|$)/g, "$1__POW__$2");
-        while (processedExpr.includes("__POW__")) {
-            processedExpr = processedExpr.replace(/(\S+?)__POW__(\S+)/g, "Math.pow($1, $2)");
-        }
+        // Preprocess expression
+        // Note: JavaScript natively supports the ** operator, so no conversion is needed
+        let processedExpr = expression;
         // Use Function constructor with restricted scope (safer than eval)
         const funcBody = `
       "use strict";
